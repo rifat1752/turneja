@@ -4,6 +4,7 @@ const Calender = () => {
     return (
         <DateRange
         rangeColors={['rgb(168 ,85 ,247)']}
+       
         direction='vertical'
         showDateDisplay={false}
         /> 

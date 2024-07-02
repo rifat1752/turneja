@@ -11,3 +11,72 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
+.Container{
+    text-align: center;
+    margin-top: 360px;
+  
+  }
+  .btn0{
+    width: 100%;
+    border: 1px solid rgb(255, 90, 255);
+    /* background: linear-gradient(to right, hsl(46, 100%, 54%), #ebe725, #fbff00); */
+    background: linear-gradient(to right, #6366f1, #a855f7, #ec4899);
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    
+  }
+  .btn1,.btn2{
+    /* color: rgb(175, 10, 175); */
+    color: rgb(255, 255, 7);
+  }
+  .btn3,.btn4{
+    color: #fff;
+  }
+  .btn1:hover,.btn2:hover{
+    /* color: rgb(255, 255, 7); */
+    color: rgb(175, 10, 175);
+  }
+  .btn3:hover,.btn4:hover{
+    color: #3498db;
+  }
+  .btn0::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    /* background: linear-gradient(to right, #6366f1, #a855f7, #ec4899); */
+    background: linear-gradient(to right, hsl(39, 100%, 54%), #ebe725, #fbff00);
+    transition: 1s;
+    z-index: -1;
+  }
+  .btn1::before,.btn3::before{
+    top: 0;
+    border-radius: 0 0 50% 50%;
+  }
+  .btn2::before,.btn4::before{
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+  }
+  .btn3::before,.btn4::before{
+    height: 180%;
+  }
+  .btn1:hover::before,.btn2:hover::before{
+    height: 180%;
+  }
+  .btn3:hover::before,.btn4:hover::before{
+    height: 0%;
+  }
+  
+  .link1 {
+    /* Other styles */
+    transition: color 0.5s ease-in-out;
+  }
+  .navlink {
+    /* Other styles */
+    transition: color 0.05s ease-in-out;
+  }

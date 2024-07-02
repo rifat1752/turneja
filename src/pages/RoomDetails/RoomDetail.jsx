@@ -5,7 +5,6 @@ import Loader from "../../components/Shared/Loader";
 import { Helmet } from "react-helmet";
 import Heading from "../../components/Shared/Heading";
 import Roominfo from "./Roominfo/Roominfo";
-import Calender from "./Calender/Calender";
 import RoomReserve from "./RoomReserve/RoomReserve";
 
 const RoomDetail = () => {
@@ -22,9 +21,10 @@ const RoomDetail = () => {
             setLoading(false)
           });
       }, [id]);
-    
+    console.log("single room:",room)
     // const [params, setParams] = use
     if(loading) return <Loader></Loader>
+  
     return (
         <Container>
            <Helmet><title>{room.title}</title></Helmet>

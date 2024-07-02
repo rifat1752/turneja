@@ -1,9 +1,63 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
+import useAuth from '../../hooks/useAuth';
+import { getToken, saveUser } from '../../api/auth';
+import toast from 'react-hot-toast';
+import { ImSpinner9 } from 'react-icons/im';
 
 const Login = () => {
+  const {signIn,signInWithGoogle,loading} = useAuth();
+  const navigate = useNavigate();
+
+
+  const handleSignInSubmit = async event =>{
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email?.value;
+    const password = form.password?.value;
+ 
+
+    try{
+      const result = await signIn(email, password)
+      
+     
+  
+     
+      const tokenResponse = await getToken(result?.user?.email)
+      // 
+      console.log(tokenResponse)
+     navigate('/')
+      toast.success("Sign In Successful")
+      
+    }
+    catch(err){
+      console.log(err);
+      toast.error(err?.message)
+    }
+  }
+
+  const handleGoogleSignIn = async ()=>{
+    try{
+     
+      const result = await signInWithGoogle()
+      const dbResponse = await saveUser(result?.user)
+      console.log(dbResponse)
+      const tokenResponse = await getToken(result?.user?.email)
+      // 
+      console.log(tokenResponse)
+     navigate('/')
+      toast.success("SignIn Successful")
+      
+    }
+    catch(err){
+      console.log(err);
+      toast.error(err?.message)
+    }
+  }
+
+
   return (
-    <div className='flex justify-center items-center min-h-screen'>
+    <div className='flex justify-center items-center min-h-screen my-5'>
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl font-bold'>Log In</h1>
@@ -11,7 +65,7 @@ const Login = () => {
             Sign in to access your account
           </p>
         </div>
-        <form
+        <form onSubmit={handleSignInSubmit}
           noValidate=''
           action=''
           className='space-y-6 ng-untouched ng-pristine ng-valid'
@@ -52,9 +106,11 @@ const Login = () => {
           <div>
             <button
               type='submit'
-              className='bg-rose-500 w-full rounded-md py-3 text-white'
+              className='btn0 btn1 z-0 rounded-md  font-semibold'
             >
-              Continue
+            {
+            loading? <ImSpinner9 className='animate-spin m-auto'/>: ' Sign In'
+           }
             </button>
           </div>
         </form>
@@ -70,10 +126,10 @@ const Login = () => {
           </p>
           <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
         </div>
-        <div className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'>
+        <div onClick={handleGoogleSignIn} className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 rounded-lg transition ease-linear duration-300 hover:border-purple-500 cursor-pointer'>
           <FcGoogle size={32} />
 
-          <p>Continue with Google</p>
+          <p>Sign In with Google</p>
         </div>
         <p className='px-6 text-sm text-center text-gray-400'>
           Don&apos;t have an account yet?{' '}

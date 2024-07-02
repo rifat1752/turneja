@@ -6,7 +6,7 @@ import avatarImg from '../../../assets/images/placeholder.jpg'
 
 const MenuDropdown = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const { user } = useAuth()
+  const { user,logOut } = useAuth()
 
   return (
     <div className='relative'>
@@ -26,12 +26,11 @@ const MenuDropdown = () => {
           <div className='hidden md:block'>
             {/* Avatar */}
             <img
-              className='rounded-full'
+              className='h-8 w-8 rounded-full'
               referrerPolicy='no-referrer'
               src={user && user.photoURL ? user.photoURL : avatarImg}
               alt='profile'
-              height='30'
-              width='30'
+             
             />
           </div>
         </div>
@@ -46,7 +45,20 @@ const MenuDropdown = () => {
               Home
             </Link>
 
-            <Link
+            {
+              user?
+              <>
+              <Link  to='/dashboard'
+              className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'>
+              Dashboard
+              </Link>
+              <div  onClick={logOut}
+              className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'>
+              Log Out
+              </div>
+              </>
+              :<>
+              <Link
               to='/login'
               className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
             >
@@ -57,7 +69,8 @@ const MenuDropdown = () => {
               className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
             >
               Sign Up
-            </Link>
+            </Link></>
+            }
           </div>
         </div>
       )}
