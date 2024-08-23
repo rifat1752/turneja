@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .bgcustombtn {
+    background: linear-gradient(to right, #6366f1, #a855f7, #ec4899);
+  }
+  .bgpeer{
+    background-color: rgb(209 213 219 / var(--tw-bg-opacity)) 
+  }
+}
+
 .no-scrollbar::-webkit-scrollbar {
     display: none;
+     background-color: rgba(114, 16, 227, 0.672);
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */

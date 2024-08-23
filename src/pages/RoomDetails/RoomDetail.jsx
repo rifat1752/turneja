@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import Container from "../../components/Shared/Container";
 import { useEffect, useState } from "react";
 import Loader from "../../components/Shared/Loader";
@@ -8,22 +8,9 @@ import Roominfo from "./Roominfo/Roominfo";
 import RoomReserve from "./RoomReserve/RoomReserve";
 
 const RoomDetail = () => {
-    const{id} = useParams()
-    const [room, setRoom] = useState({});
-    const [loading, setLoading] = useState(false);
-    useEffect(() => {
-        setLoading(true)
-        fetch("/rooms.json")
-          .then((res) => res.json())
-          .then((data) =>{
-            const singleRoom = data.find(room=>room._id=== id)
-            setRoom(singleRoom);
-            setLoading(false)
-          });
-      }, [id]);
-    console.log("single room:",room)
-    // const [params, setParams] = use
-    if(loading) return <Loader></Loader>
+
+    const room = useLoaderData();
+  
   
     return (
         <Container>

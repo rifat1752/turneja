@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
 import useAuth from '../../hooks/useAuth';
 import { getToken, saveUser } from '../../api/auth';
@@ -6,8 +6,11 @@ import toast from 'react-hot-toast';
 import { ImSpinner9 } from 'react-icons/im';
 
 const Login = () => {
-  const {signIn,signInWithGoogle,loading} = useAuth();
+  const {signIn,signInWithGoogle,loading, setLoading} = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || '/';
+
 
 
   const handleSignInSubmit = async event =>{
@@ -26,14 +29,16 @@ const Login = () => {
       const tokenResponse = await getToken(result?.user?.email)
       // 
       console.log(tokenResponse)
-     navigate('/')
+     navigate(from,{replace:true})
       toast.success("Sign In Successful")
-      
+     
     }
     catch(err){
       console.log(err);
-      toast.error(err?.message)
+      toast.error("Email or Password incorrect");
+      setLoading(false)
     }
+    form.reset();
   }
 
   const handleGoogleSignIn = async ()=>{
@@ -45,7 +50,7 @@ const Login = () => {
       const tokenResponse = await getToken(result?.user?.email)
       // 
       console.log(tokenResponse)
-     navigate('/')
+     navigate(from,{replace:true})
       toast.success("SignIn Successful")
       
     }
