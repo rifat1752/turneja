@@ -4,6 +4,7 @@ import useAuth from '../../hooks/useAuth';
 import { getToken, saveUser } from '../../api/auth';
 import toast from 'react-hot-toast';
 import { ImSpinner9 } from 'react-icons/im';
+import axiosSecure from '../../api';
 
 const Login = () => {
   const {signIn,signInWithGoogle,loading, setLoading} = useAuth();
@@ -41,24 +42,34 @@ const Login = () => {
     form.reset();
   }
 
-  const handleGoogleSignIn = async ()=>{
-    try{
-     
-      const result = await signInWithGoogle()
-      const dbResponse = await saveUser(result?.user)
-      console.log(dbResponse)
-      const tokenResponse = await getToken(result?.user?.email)
-      // 
-      console.log(tokenResponse)
-     navigate(from,{replace:true})
-      toast.success("SignIn Successful")
+  const handleGoogleSignIn = async () => {
+    try {
+      const result = await signInWithGoogle();
+      const { user } = result;
       
-    }
-    catch(err){
+      // Check if user exists before creating a new one
+      const existingUserResponse = await axiosSecure.get(`/user/${user.email}`);
+  
+      if (!existingUserResponse.data) {
+        // If user does not exist, save to DB
+        const dbResponse = await saveUser(user);
+        console.log("New user created in DB: ", dbResponse);
+      } else {
+        console.log("User already exists: ", existingUserResponse.data);
+      }
+  
+      // Generate token for the existing or new user
+      const tokenResponse = await getToken(user.email);
+      console.log("Token received from server: ", tokenResponse);
+      
+      navigate(from, { replace: true });
+      toast.success("SignIn Successful");
+    } catch (err) {
       console.log(err);
-      toast.error(err?.message)
+      toast.error(err?.message);
     }
-  }
+  };
+  
 
 
   return (

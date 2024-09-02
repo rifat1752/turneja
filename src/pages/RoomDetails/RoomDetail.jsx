@@ -10,8 +10,7 @@ import RoomReserve from "./RoomReserve/RoomReserve";
 const RoomDetail = () => {
 
     const room = useLoaderData();
-  
-  
+    console.log("reserve room",room)
     return (
         <Container>
            <Helmet><title>{room.title}</title></Helmet>

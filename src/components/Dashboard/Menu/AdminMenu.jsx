@@ -1,5 +1,6 @@
 import { RiAdminFill } from "react-icons/ri";
-import MenuItem from "./MenuItem";
+import MenuItem from "../Sidebar/MenuItem";
+
 
 const AdminMenu = () => {
     console.log('admin menu')

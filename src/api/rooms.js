@@ -14,7 +14,7 @@ export const getHostRooms =async (email)=>{
 // single room
 
 export const getSingleRoom = async id =>{
-    const {data} = await axiosSecure(`/room/${id}`)
+    const {data} = await axiosSecure(`/rooms/${id}`)
     return data
 }
 
