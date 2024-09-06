@@ -6,7 +6,7 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import RoomDetail from "../pages/RoomDetails/RoomDetail";
 import PrivateRoute from "./privateRoute";
-import { getRooms, getSingleRoom } from "../api/rooms";
+import {  getSingleRoom } from "../api/rooms";
 import DashboardLayout from "../components/Dashboard/DashboardLayout";
 import AddRoom from "../components/Dashboard/Sidebar/host/AddRoom";
 import MyLists from "../components/Dashboard/Sidebar/host/MyLists";
