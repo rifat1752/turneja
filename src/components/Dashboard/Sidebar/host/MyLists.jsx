@@ -1,16 +1,22 @@
-import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async'
 import useAuth from '../../../../hooks/useAuth';
 import { getHostRooms } from '../../../../api/rooms';
 import TableRows from '../../TableRows/TableRows';
+import { useQuery } from '@tanstack/react-query';
+import Loader from '../../../Shared/Loader';
 
 const MyLists = () => {
-  const {user} = useAuth()
-  const [rooms, setRooms] =useState([])
-  useEffect(()=>{
-    getHostRooms(user?.email)
-    .then(data=>setRooms(data))
-  },[user])
+  const { user, loading } = useAuth()
+  const {
+    refetch,
+    data: rooms = [],
+    isLoading,
+  } = useQuery({
+    queryKey: ['rooms', user?.email],
+    enabled: !loading,
+    queryFn: async () => await getHostRooms(user?.email),
+  })
+  if (isLoading) return <Loader />
      return (
         <>
         <Helmet>
@@ -70,7 +76,7 @@ const MyLists = () => {
                   </thead>
                   <tbody>
                     {
-                      rooms.map(room =><TableRows key={room._id} room={room}></TableRows>)
+                      rooms.map(room =><TableRows key={room._id} room={room} refetch={refetch}></TableRows>)
                     }
                   </tbody>
                 </table>

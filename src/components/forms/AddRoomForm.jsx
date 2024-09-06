@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { DateRange } from "react-date-range";
 import { TbFidgetSpinner } from "react-icons/tb";
 import { categories } from "../../pages/Home/Categories/Categoriesdata";

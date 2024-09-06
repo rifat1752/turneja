@@ -69,7 +69,7 @@ const MyBookings = () => {
                   </thead>
                   <tbody>
                    {
-                    bookings.map(booking => (<BookingDataRow key={booking._id} booking={booking}></BookingDataRow>))
+                    bookings.map(booking => (<BookingDataRow key={booking._id} booking={booking} refetch={refetch}></BookingDataRow>))
                    }
                   </tbody>
                 </table>
