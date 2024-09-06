@@ -5,7 +5,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import RoomDetail from "../pages/RoomDetails/RoomDetail";
-import PrivateRoute from "./privateRoute";
+import PrivateRoute from "./PrivateRoute.jsx";
 import {  getSingleRoom } from "../api/rooms";
 import DashboardLayout from "../components/Dashboard/DashboardLayout";
 import AddRoom from "../components/Dashboard/Sidebar/host/AddRoom";
