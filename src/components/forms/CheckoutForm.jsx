@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import { useEffect, useState } from 'react'
-import './CheckoutForm.css'
+import './CheckOutForm.css'
 import useAuth from '../../hooks/useAuth'
 import { ImSpinner9 } from 'react-icons/im'
 import { createPaymentIntent, saveBookingInfo, updateStatus } from '../../api/booking'
