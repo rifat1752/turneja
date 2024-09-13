@@ -22,7 +22,7 @@ const Profile = () => {
             <a href={user.photoURL} className='relative block'>
 
             <div className="avatar indicator">
-  <span className="indicator-item indicator-bottom indicator-end badge text-slate-700 font-semibold badge-warning"> {role && role.toUpperCase()}</span>
+  <span className="indicator-item indicator-bottom indicator-end border-2  border-purple-400 badge text-slate-700 font-semibold badge-warning"> {role && role.toUpperCase()}</span>
   <div className="h-20 w-20 rounded-lg">
   <img
                 alt='profile'
@@ -52,10 +52,10 @@ const Profile = () => {
                 </p>
     </div>
                 <div className=" mx-auto "> 
-                  <button className=' w-44 h-10 px-10 py-2 rounded text-purple-600 cursor-pointer  block mb-2 border border-purple-500 profile-button profile-button1'>
+                  <button className=' w-44 h-10 px-10 py-2  text-purple-600 cursor-pointer  block mb-2  border-purple-500 profile-button profile-button1'>
                     Update Profile
                   </button>
-                  <button className=' w-44 h-10 px-7 py-2 rounded text-purple-600 cursor-pointer border border-purple-500 profile-button profile-button1'>
+                  <button className=' w-44 h-10 px-7 py-2 rounded text-purple-600 cursor-pointer  border-purple-500 profile-button profile-button1'>
                     Change Password
                   </button>
                 </div>

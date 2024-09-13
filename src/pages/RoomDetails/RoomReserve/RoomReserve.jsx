@@ -11,7 +11,7 @@ import useAuth from "../../../hooks/useAuth";
 const RoomReserve = ({room}) => {
     let [isOpen, setIsOpen] = useState(false)
     const {user} = useAuth()
-    console.log("for id room",room)
+    console.log("for id room",room.booked)
 
     const close =()=>{
         setIsOpen(false)
@@ -60,7 +60,7 @@ const RoomReserve = ({room}) => {
       </div> 
             <hr />
             <div className="p-4">
-                <Button disabled={room.host.email === user.email  || room.booked} onClick={()=>setIsOpen(true)} label={'Reserve'}></Button>
+                <Button disabled={room.host.email === user.email  || room?.booked===true} onClick={()=>setIsOpen(true)} label={'Reserve'}></Button>
             </div>
             <hr />
             <div className="p-4 text-lg font-semibold flex flex-row justify-between">

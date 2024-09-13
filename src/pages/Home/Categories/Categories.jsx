@@ -1,5 +1,4 @@
 import { useSearchParams } from "react-router-dom";
-import Container from "../../../components/Shared/Container";
 import { categories } from "./Categoriesdata";
 import Category from "./Category";
 
@@ -8,9 +7,12 @@ const Categories = () => {
   const category = params.get("category");
   console.log(category);
   return (
-    <div>
-      <Container>
-        <div className="flex gap-8 pt-4 overflow-x-auto no-scrollbar bg-slate-50 focus:touch-pan-x">
+  
+     <div className="relative md:mx-5    my-10   ">
+        <div className="flex rounded  gap-10  overflow-x-auto  bg-slate-50 focus:touch-pan-x
+         scrollbar-none h-16 ">
+     <div className="text-center   flex items-center justify-center  h-16 font-semibold text-[yellow] p-2 bg-gradient-to-r from-purple-500 to-indigo-500 rounded">Categories</div>
+
           {categories.map((item) => (
             <Category
               key={item.label}
@@ -20,7 +22,7 @@ const Categories = () => {
             ></Category>
           ))}
         </div>
-      </Container>
+       
     </div>
   );
 };

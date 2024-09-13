@@ -73,8 +73,11 @@ const Login = () => {
 
 
   return (
-    <div className='flex justify-center items-center min-h-screen my-5'>
-      <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
+    <div className='flex justify-center lg:justify-around items-center min-h-screen my-5'>
+      <div className='hidden lg:block lg:w-5/12  '>
+        <img src="https://i.ibb.co.com/Rj0fBv0/20944201.jpg" alt="" />
+      </div>
+      <div className='lg:w-5/12 border border-purple-600 shadow-lg shadow-slate-500 flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl font-bold'>Log In</h1>
           <p className='text-sm text-gray-400'>
@@ -97,7 +100,7 @@ const Login = () => {
                 id='email'
                 required
                 placeholder='Enter Your Email Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-purple-400 bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
               />
             </div>
@@ -114,7 +117,7 @@ const Login = () => {
                 id='password'
                 required
                 placeholder='*******'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-purple-400 bg-gray-200 text-gray-900'
               />
             </div>
           </div>
@@ -122,7 +125,7 @@ const Login = () => {
           <div>
             <button
               type='submit'
-              className='btn0 btn1 z-0 rounded-md  font-semibold'
+              className='btn0 btn1 z-0 bg-s rounded-md  font-semibold'
             >
             {
             loading? <ImSpinner9 className='animate-spin m-auto'/>: ' Sign In'

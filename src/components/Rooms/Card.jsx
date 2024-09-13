@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Card = ({room}) => {
     // console.log("room",room)
     return (
-       <Link to={`/room/${room?._id}`} className='col-span-1 border-2 border-slate-200 rounded-lg shadow-xl p-2 cursor-pointer group'>
+       <Link to={`/room/${room?._id}`} className='col-span-1 border p-2 border-slate-300  rounded-2xl shadow-lg shadow-slate-400 cursor-pointer group'>
       <div className='flex flex-col gap-2 w-full'>
         <div
           className='

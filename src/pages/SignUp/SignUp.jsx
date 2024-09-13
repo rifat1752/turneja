@@ -77,8 +77,11 @@ const SignUp = () => {
 
 
   return (
-    <div className='flex justify-center my-5 items-center min-h-screen'>
-      <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
+    <div className='flex justify-center lg:justify-around my-5 items-center min-h-screen'>
+       <div className='hidden lg:block lg:w-5/12  '>
+        <img src="https://i.ibb.co.com/Rj0fBv0/20944201.jpg" alt="" />
+      </div>
+      <div className='lg:w-5/12 border border-purple-600 shadow-lg shadow-slate-500 flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl font-bold'>Sign Up</h1>
           <p className='text-sm text-gray-400'>Welcome to Turneja</p>
@@ -98,7 +101,7 @@ const SignUp = () => {
                 name='name'
                 id='name'
                 placeholder='Enter Your Name Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-purple-400 bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
               />
             </div>
@@ -124,7 +127,7 @@ const SignUp = () => {
                 id='email'
                 required
                 placeholder='Enter Your Email Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-purple-400 bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
               />
             </div>
@@ -141,7 +144,7 @@ const SignUp = () => {
                 id='password'
                 required
                 placeholder='*******'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-purple-400 bg-gray-200 text-gray-900'
               />
             </div>
           </div>

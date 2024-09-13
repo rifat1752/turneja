@@ -26,20 +26,23 @@ const Rooms = () => {
       });
   }, [category]);
   console.log(rooms)
-  if(loading) return <Loader></Loader>
+  if(loading) return <>
+  <div className="w-full">
+  <Loader></Loader>
+    </div></>
   // console.log('rooms :',rooms)
   return (
-    <div className="mt-10">
+    <div className="my-10 w-full ">
       {/* <h1 className="text-6xl font-bold"> Cart : {rooms?.length}</h1> */}
-      <Container>
+    
         {rooms && rooms.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3   xl:grid-cols-4 place-content-center  gap-8">
             {rooms.map((room) => (
               <Card key={room._id} room={room}></Card>
             ))}
           </div>
         ) : (
-          <div className="flex justify-center items-center min-h-[calc(100vh-300px)]">
+          <div className=" flex justify-center  items-center  min-h-[calc(100vh-300px)]">
             <Heading
               center={true}
               title={"No Rooms Available"}
@@ -47,7 +50,7 @@ const Rooms = () => {
             ></Heading>
           </div>
         )}
-      </Container>
+      
     </div>
   );
 };
