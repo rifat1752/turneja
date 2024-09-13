@@ -23,7 +23,7 @@ const Category = ({ label, icon: Icon, selected }) => {
     params.get('category');
 
   return (
-    <div onClick={handleClick} className={`flex flex-col   items-center justify-center  gap-2 p- ${selected?'border-b-4 border-purple-500':''}  hover:text-neutral-800 transition cursor-pointer`}>
+    <div  onClick={handleClick} className={`flex flex-col   items-center justify-center  gap-2 p- ${selected?'border-b-4 border-purple-500':''}  hover:text-neutral-800 transition cursor-pointer`}>
       <Icon />
       <div className="text-sm font-medium">{label}</div>
     </div>
