@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
-import Container from "../Shared/Container";
 import { useSearchParams } from "react-router-dom";
 import Heading from "../Shared/Heading";
 import  Loader from "../Shared/Loader"
 import { getRooms } from "../../api/rooms";
 const Rooms = () => {
   const [rooms, setRooms] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [params, setParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
   const category = params.get("category");

@@ -8,7 +8,6 @@ import axiosSecure from '../../api';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
-import animation1 from '../../assets/lottie/login.json'
 import animation2 from '../../assets/lottie/login2.json'
 
 
@@ -89,13 +88,13 @@ const Login = () => {
       <div
        data-aos="fade-right"
         data-aos-easing="linear"
-       data-aos-duration="1000" className='hidden lg:block lg:w-5/12  '>
+       data-aos-duration="500" className='hidden lg:block lg:w-5/12  '>
         <Lottie animationData={animation2}></Lottie>
       </div>
       <div
        data-aos="zoom-in"
        data-aos-easing="linear"
-      data-aos-duration="1000" className='lg:w-5/12 border border-purple-600 shadow-lg shadow-slate-500 flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
+      data-aos-duration="500" className='lg:w-5/12 border border-purple-600 shadow-lg shadow-slate-500 flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl font-bold'>Log In</h1>
           <p className='text-sm text-gray-400'>

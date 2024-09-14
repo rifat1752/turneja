@@ -9,7 +9,6 @@ import axiosSecure from '../../api';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
-import animation1 from '../../assets/lottie/login.json'
 import animation2 from '../../assets/lottie/login2.json'
 
 

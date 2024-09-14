@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 import { useNavigate, useSearchParams } from "react-router-dom";
 import qs from'query-string'
 
 
 const Category = ({ label, icon: Icon, selected }) => {
   console.log(selected)
+    // eslint-disable-next-line no-unused-vars
     const [params, setParams] = useSearchParams()
     // params.get('category')
     const navigate = useNavigate();

@@ -8,7 +8,6 @@ import 'aos/dist/aos.css'
 
 // import required modules
 import { Autoplay, Navigation } from 'swiper/modules';
-import Container from '../Container';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 

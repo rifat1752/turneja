@@ -3,6 +3,7 @@ import { categories } from "./Categoriesdata";
 import Category from "./Category";
 
 const Categories = () => {
+  // eslint-disable-next-line no-unused-vars
   const [params, setParams] = useSearchParams();
   const category = params.get("category");
   console.log(category);
