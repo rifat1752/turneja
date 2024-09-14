@@ -8,6 +8,12 @@ import axiosSecure from '../../api';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
+import animation1 from '../../assets/lottie/login.json'
+import animation2 from '../../assets/lottie/login2.json'
+
+
+import Lottie from 'lottie-react';
+
 
 const Login = () => {
   useEffect(()=>{
@@ -84,7 +90,7 @@ const Login = () => {
        data-aos="fade-right"
         data-aos-easing="linear"
        data-aos-duration="1000" className='hidden lg:block lg:w-5/12  '>
-        <img src="https://i.ibb.co.com/g7gzY70/login.jpg" alt="" />
+        <Lottie animationData={animation2}></Lottie>
       </div>
       <div
        data-aos="zoom-in"

@@ -9,6 +9,11 @@ import axiosSecure from '../../api';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
+import animation1 from '../../assets/lottie/login.json'
+import animation2 from '../../assets/lottie/login2.json'
+
+
+import Lottie from 'lottie-react';
 
 
 
@@ -89,19 +94,19 @@ const {createUser,signInWithGoogle, updateUserProfile,loading} = useAuth();
   return (
     <div className='flex justify-center lg:justify-around my-5 items-center min-h-screen'>
        <div
-        data-aos="fade-right"
+        data-aos="zoom-in"
         data-aos-easing="linear"
        data-aos-duration="1000"
         className='hidden lg:block lg:w-5/12  '>
-        <img src="https://i.ibb.co.com/g7gzY70/login.jpg" alt="" />
+        <Lottie animationData={animation2}></Lottie>
       </div>
       <div
        data-aos="zoom-in"
        data-aos-easing="linear"
       data-aos-duration="1000"
-       className='lg:w-5/12 border border-purple-600 shadow-lg shadow-slate-500 flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
+       className='lg:w-5/12 border border-purple-600 shadow-lg shadow-slate-500 flex flex-col max-w-md p-5 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
         <div className='mb-8 text-center'>
-          <h1 className='my-3 text-4xl font-bold'>Sign Up</h1>
+          <h1 className='my-1 text-4xl font-bold'>Sign Up</h1>
           <p className='text-sm text-gray-400'>Welcome to Turneja</p>
         </div>
         <form onSubmit={handleSubmit}
