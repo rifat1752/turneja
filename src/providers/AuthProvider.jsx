@@ -14,6 +14,7 @@ import {
 import { app } from '../firebase/firebase.config'
 import { clearCookie } from '../api/auth'
 import { Await } from 'react-router-dom'
+import toast from 'react-hot-toast'
 
 
 export const AuthContext = createContext(null)
@@ -44,11 +45,14 @@ const AuthProvider = ({ children }) => {
     return sendPasswordResetEmail(auth, email)
   }
 
-  const logOut =async () => {
-    setLoading(true)
-    await clearCookie()
-    return signOut(auth)
-  }
+  const logOut = async () => {
+    setLoading(true);
+    await clearCookie();  // Clear the cookies
+    await signOut(auth);  // Sign out the user
+    setLoading(false);    // Stop loading
+    toast.success("Sign Out Successful");  // Show success toast
+  };
+  
 
   const updateUserProfile = (name, photo) => {
     return updateProfile(auth.currentUser, {
