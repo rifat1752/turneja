@@ -12,8 +12,8 @@ const Categories = () => {
      <div data-aos="fade-down"
      data-aos-easing="linear"
      data-aos-duration="1000" className="relative md:mx-5    my-10   ">
-        <div className="flex rounded  gap-10  overflow-x-auto  bg-slate-50 focus:touch-pan-x
-         scrollbar-none h-16 ">
+        <div className="flex rounded  gap-10 xl:gap-16 overflow-x-auto  bg-slate-50 focus:touch-pan-x
+         scrollbar-none h-20 ">
      <div className="text-center   flex items-center justify-center  h-16 font-semibold text-[yellow] p-2 bg-gradient-to-r from-purple-500 to-indigo-500 rounded">Categories</div>
 
           {categories.map((item) => (
