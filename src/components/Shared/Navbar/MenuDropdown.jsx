@@ -94,7 +94,7 @@ const MenuDropdown = () => {
         {/* Dropdown btn */}
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className='p-4 md:py-1 md:px-2 border-[1px]  md:hover:shadow-none border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition'
+          className='p-2 bg-yellow-500 md:py-1 md:px-2 border-[1px]  md:hover:shadow-none border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition'
         >
           <AiOutlineMenu className='md:hidden block'/>
           <div className='hidden bg-red-500 md:block'>
