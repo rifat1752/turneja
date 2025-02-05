@@ -50,7 +50,7 @@ autoplay={{
                 {bannerImage.map((banner, index) => (
                     <SwiperSlide key={index}>
                         <img className='h-full  brightness-90 blur-[3px] object-cover' src={banner.image} alt={`Banner ${index + 1}`} />
-                       <div  className='absolute   flex flex-col  items-start top-5 border-2 border-red-500 sm:top-0 left-0 pl-16 sm:w-5/6 md:w-3/5 xl:w-1/2  h-full justify-center    bg-gradient-to-r from-purple-600 to-transparent  '>
+                       <div  className='absolute   flex flex-col  items-start top-5  sm:top-0 left-0 pl-16 sm:w-5/6 md:w-3/5 xl:w-1/2  h-full justify-center    bg-gradient-to-r from-purple-600 to-transparent  '>
                        <h1 data-aos="fade-right" data-aos-duration="1000" className='text-slate-200 font-bold text-xl sm:text-4xl lg:text-5xl mt-5'>{banner.heading}</h1>
                        <p data-aos="fade-right" data-aos-duration="1000" className='text-slate-300 text-xs sm:text-base lg:text-xl  text-left mt-2 ms:mt-10 mr-10'>{banner.Description}</p>
                        <Link data-aos="fade-right" data-aos-duration="1000" to='/signup' className='banner-btn text-sm md:text-lg font-semibold w-28 sm:w-40 h-11  mt-5 py-3 sm:py-2'>Sign Up Now!</Link>
