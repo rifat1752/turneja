@@ -46,7 +46,7 @@ const Banner = () => {
 autoplay={{
     delay: 3000, // Change slide every 3 seconds
     disableOnInteraction: false, // Keep autoplay even after user interacts
-  }} className="mySwiper max-w-screen-2xl   max-h-screen ">
+  }} className="mySwiper max-w-screen   max-h-screen ">
                 {bannerImage.map((banner, index) => (
                     <SwiperSlide key={index}>
                         <img className='h-full  brightness-90 blur-[3px] object-cover' src={banner.image} alt={`Banner ${index + 1}`} />
