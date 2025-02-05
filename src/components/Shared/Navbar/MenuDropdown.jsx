@@ -97,10 +97,10 @@ const MenuDropdown = () => {
           className='p-2 bg-yellow-500 md:py-2 md:px-2 border-[1px]  md:hover:shadow-none border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition'
         >
           <AiOutlineMenu className='md:hidden block'/>
-          <div className='hidden bg-red-500 md:block'>
+          <div className='hidden  md:block'>
             {/* Avatar */}
             <img
-              className='h-8 w-8 bg-green-500 rounded-full'
+              className='h-8 w-8 rounded-full'
               referrerPolicy='no-referrer'
               src={user && user.photoURL ? user.photoURL : avatarImg}
               alt='profile'
